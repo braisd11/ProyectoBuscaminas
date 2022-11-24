@@ -15,8 +15,9 @@ public class Mensaxe {
     boolean lido;
     
     public Mensaxe (String texto, Perfil remitente){
-        //Podería ir data pero non sabemos
-
+        this.texto=texto;
+        this.data=data;
+        this.lido=false;
     }
 
                                         //GETTER E SETTER
