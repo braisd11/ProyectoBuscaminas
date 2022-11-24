@@ -7,7 +7,6 @@ package com.mycompany.caralibro;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Scanner;
-import javax.management.MBeanRegistrationException;
 
 /**
  *
@@ -19,6 +18,7 @@ public class Perfil {
     public String estado;
     ArrayList<Perfil> amigos=new ArrayList<Perfil>();
     ArrayList<Perfil> solicitudes=new ArrayList<Perfil>();
+    ArrayList<Mensaxe> mensaxes=new ArrayList<Mensaxe>();
     
     
                                             //MÉTODO CONSTRUCTOR
@@ -65,6 +65,36 @@ public class Perfil {
     
     //Este método envía unha solicitude a un Perfil para que este o engada ao seu array de amigos
     public void engadirSolicitudeDeAmizade (Perfil perfilSolicitante) {
-        System.out.println("Tes unha solicitude de: " + );
+        solicitudes.add(perfilSolicitante);
+    }
+    
+    //Decidimos se aceptamos a solicitude engadida no método engadirSolicitudeDeAmizade
+    public void aceptarSolicitudeDeAmizade (Perfil perfilSolicitante){
+        engadirAmigo(perfilSolicitante);
+        solicitudes.remove(perfilSolicitante);
+    }
+    
+    
+    //Decidimos se rexeitamos a solicitude engadida no método engadirSolicitudeDeAmizade
+    public void rexeitarSolicitudeDeAmizade (Perfil perfilSolicitante){
+        solicitudes.remove(perfilSolicitante);
+    }
+    
+    
+    //Engadimos unha mensaxe a outro perfil para que se mostre se o solicita
+    public void engadirMensaxePrivada (Mensaxe m){
+        mensaxes.add(m);
+    }
+    
+    //Eliminamos unha mensaxe do noso perfil
+    public void eliminarMensaxe (Mensaxe m){
+        mensaxes.remove(m);
+    }
+    
+    
+    public void mostrarMensaxes (Perfil p) {
+        for (int cont=0; cont<p.mensaxes.size();cont++){
+            System.out.println(p.mensaxes.get(cont));
+        }
     }
 }

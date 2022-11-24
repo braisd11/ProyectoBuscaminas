@@ -19,5 +19,7 @@ public class CaraLibro {
         base.engadirPerfil(jaime);
         paco.engadirAmigo(jaime);
         paco.engadirSolicitudeDeAmizade(jaime);
+        
+        
     }
 }
